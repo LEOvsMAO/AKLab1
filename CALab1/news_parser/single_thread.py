@@ -9,8 +9,6 @@ def find_by_tag(tag, path):
 
 
 def contains_score(item):
-    # pattern = re.compile(r'([a-zA-Z]+)\s*-\s*([a-zA-Z]+)')
-
     pattern = re.compile(r'(\d+)\s*-\s*(\d+)')
     item_title = item.find('.//title')
     if not ((item_title is None) or (item_title.text is None)):
@@ -33,11 +31,7 @@ def parse_rss(text):
 def write_xml(items, path):
     sport_results = ET.Element('results')
     for i in items:
-        # ET.SubElement(sport_results, 'item').insert(0, i)
         sport_results.insert(0, i)
     tree = ET.ElementTree(sport_results)
     tree.write(path)
-
-
-
-
+    return True
