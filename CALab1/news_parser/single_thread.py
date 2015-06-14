@@ -4,7 +4,7 @@ import re
 
 def find_by_tag(tag, path):
     tree = ET.parse(path)
-    root = tree.getroot()
+    root = tree.getroot() 
     return [item.text for item in root.findall(tag)]
 
 
