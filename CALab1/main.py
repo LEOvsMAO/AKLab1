@@ -35,3 +35,4 @@ t3 = time()
 write_xml(results, "multi_thread.xml")
 print(t1 - t0)
 print(t3-t2)
+
